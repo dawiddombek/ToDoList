@@ -10,19 +10,24 @@
 <div class="container">
     <div class="todo-app">
         <h2>To Do List <img src="/images/notepad-icon.png"></h2>
-        <div class="row">
-            <input type="text" id="input-box" placeholder="Add to list">
-            <form action="/AddNewTask" method="post">
-                <button>Add</button>
-            </form>
-        </div>
+        <form action="/addNewTask" method="post">
+            <div class="row">
+                <input type="text" id="input-box" name="input-box" placeholder="Add to list">
+                <button type="submit">Add</button>
+            </div>
+        </form>
         <ul id="list-container">
-            <li class="checked">Task 1</li>
-            <li>Task 2</li>
-            <li>Task 3</li>
+            <li th:each="task : ${taskList}">
+                <div class="task-row">
+                    <p5 th:if="${task.isDone()}==true" th:text="${task.getName()}">Name</p5>
+                    <p5 th:if="${task.isDone()}==false" class="checked" th:text="${task.getName()}">Name</p5>
+                    <button class="delete" th:onclick="'deleteTask(\'' + ${task.getId()} + '\')'">x</button>
+                </div>
+            </li>
         </ul>
     </div>
 </div>
-
+    <script type="text/javascript" th:src="@{/javaScript/scripts.js}"></script>
+    <script src="/javaScript/scripts.js"></script>
 </body>
 </html>
