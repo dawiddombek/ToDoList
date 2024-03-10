@@ -1,4 +1,4 @@
-package com.ToDoList.servise;
+package com.ToDoList.service;
 
 import com.ToDoList.model.classes.Task;
 import com.ToDoList.model.repositories.TaskRepository;

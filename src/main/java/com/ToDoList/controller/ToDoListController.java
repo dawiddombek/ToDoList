@@ -1,8 +1,7 @@
 package com.ToDoList.controller;
 
-import com.ToDoList.model.classes.Task;
 import com.ToDoList.model.repositories.TaskRepository;
-import com.ToDoList.servise.ToDoListService;
+import com.ToDoList.service.ToDoListService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
