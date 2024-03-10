@@ -24,4 +24,15 @@ public class ToDoListService {
     public void deleteTask(Long id) {
         taskRepository.deleteById(id);
     }
+
+    public void changeState(Long id) {
+        Task task = taskRepository.getTaskById(id);
+        if(task.isDone()) {
+            task.setDone(false);
+        }
+        else {
+            task.setDone(true);
+        }
+        taskRepository.save(task);
+    }
 }

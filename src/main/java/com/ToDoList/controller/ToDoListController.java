@@ -35,8 +35,8 @@ public class ToDoListController {
     }
 
     @GetMapping("/changeState")
-    public String getChangeState() {
-        System.out.println("Działa");
+    public String getChangeState(@RequestParam Long id) {
+        toDoListService.changeState(id);
         return "redirect:/";
     }
 

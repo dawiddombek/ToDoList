@@ -73,29 +73,25 @@ button.delete{
 button.delete:hover{
     background: darkred;
 }
-ul li{
+ul li {
     list-style: none;
-    font-size: 20px;
-    padding: 12px 8px 12px 50px;
-    user-select: none;
-    cursor: pointer;
-    position: relative;
 }
-ul li::before{
-    content: '';
-    position: absolute;
-    height: 20px;
-    width: 20px;
-    background-image: url(../images/unchecked.png);
-    background-size: 30px;
-    background-position: center;
-    top: 12px;
-    left: 8px;
-}
-ul li.checked{
-    color: darkgray;
+
+.task-checked {
+    background: none!important;
+    border: none;
+    padding: 0!important;
     text-decoration: line-through;
+    font-family: arial, sans-serif;
+    color: black;
+    cursor: pointer;
 }
-ul li.checked::before{
-    background-image: url(../images/checked.png);
+
+.task-unchecked {
+    background: none!important;
+    border: none;
+    padding: 0!important;
+    font-family: arial, sans-serif;
+    color: black;
+    cursor: pointer;
 }

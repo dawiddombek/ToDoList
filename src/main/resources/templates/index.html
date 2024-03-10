@@ -19,8 +19,8 @@
         <ul id="list-container">
             <li th:each="task : ${taskList}">
                 <div class="task-row">
-                    <p5 th:if="${task.isDone()}==true" th:text="${task.getName()}">Name</p5>
-                    <p5 th:if="${task.isDone()}==false" class="checked" th:text="${task.getName()}">Name</p5>
+                    <button th:if="${task.isDone() == true}" class="task-checked" th:text="${task.getName()}" th:onclick="'changeState(\'' + ${task.getId()} + '\')'">Name</button>
+                    <button th:if="${task.isDone() == false}" class="task-unchecked" th:text="${task.getName()}" th:onclick="'changeState(\'' + ${task.getId()} + '\')'">Name</button>
                     <button class="delete" th:onclick="'deleteTask(\'' + ${task.getId()} + '\')'">x</button>
                 </div>
             </li>
@@ -28,6 +28,5 @@
     </div>
 </div>
     <script type="text/javascript" th:src="@{/javaScript/scripts.js}"></script>
-    <script src="/javaScript/scripts.js"></script>
 </body>
 </html>
